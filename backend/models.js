@@ -8,9 +8,9 @@ const PlaylistsPost = mongoose.model('playlistPost', {
 const SongsPost = mongoose.model('songsPost', {
     _id: mongoose.SchemaTypes.String,
     name: mongoose.SchemaTypes.String,
-    quantity: mongoose.SchemaTypes.Number,
-    price: mongoose.SchemaTypes.Number,
-    store_id: mongoose.SchemaTypes.String
+    author: mongoose.SchemaTypes.String,
+    genre: mongoose.SchemaTypes.String,
+    playlist_id: mongoose.SchemaTypes.String
 });
 
 module.exports = {

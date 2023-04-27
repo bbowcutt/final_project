@@ -9,7 +9,7 @@ import SinglePlaylist, { getPlaylist } from './SinglePlaylist.js';
 import CreateProduct from './NewPlaylist.js'; 
 import Songs, { getSongs } from './Songs';
 
-//import SingleSong, { getPlaylist } from './SinglePlaylist.js';
+import SingleSong, { getSong } from './SingleSong.js';
 import CreateSong, {getSongNew} from './NewSong.js'; 
 
 const router = createBrowserRouter([
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/playlists/:playlistsId/songs/:songId",
-                loader: getPlaylist,
+                path: "/playlists/:playlistId/songs/:songId",
+                loader: getSong,
                 element: (
-                    <SinglePlaylist />
+                    <SingleSong />
                 ),
             },
             {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/playlists/:playlistId/songs",
+                path: "/playlist/:playlistId/songs",
                 loader: getSongs,
                 element: (
                     <Songs />
