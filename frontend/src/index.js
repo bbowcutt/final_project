@@ -6,10 +6,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import Playlists, { fetchPlaylist } from './Playlists';
 import SinglePlaylist, { getPlaylist } from './SinglePlaylist.js';
-import CreateProduct from './newPlaylist.js'; 
+import CreateProduct from './NewPlaylist.js'; 
 import Songs, { getSongs } from './Songs';
 
-import SingleSong, { getSong } from './SinglePlaylist.js';
+//import SingleSong, { getPlaylist } from './SinglePlaylist.js';
 import CreateSong, {getSongNew} from './NewSong.js'; 
 
 const router = createBrowserRouter([
@@ -37,9 +37,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/playlists/:playlistsId/songs/:songId",
-                loader: getSong,
+                loader: getPlaylist,
                 element: (
-                    <SingleSong />
+                    <SinglePlaylist />
                 ),
             },
             {
