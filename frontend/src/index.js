@@ -4,13 +4,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Wrapper from './Wrapper';
-import Stores, { fetchStore } from './Stores';
-import SingleStore, { getStore } from './SingleStore.js';
-import CreateProduct from './NewStore.js'; 
-import Items, { getItems } from './Items';
+import Playlists, { fetchPlaylist } from './Playlists';
+import SinglePlaylist, { getPlaylist } from './SinglePlaylist.js';
+import CreateProduct from './newPlaylist.js'; 
+import Songs, { getSongs } from './Songs';
 
-import SingleItem, { getItem } from './SingleItem.js';
-import CreateItem, {getItemNew} from './NewItem.js'; 
+import SingleSong, { getSong } from './SinglePlaylist.js';
+import CreateSong, {getSongNew} from './NewSong.js'; 
 
 const router = createBrowserRouter([
   {
@@ -18,42 +18,42 @@ const router = createBrowserRouter([
     element: <Wrapper />,
         children: [
             {
-                path: "/stores",
-                loader: fetchStore,
-                element: <Stores />,
+                path: "/playlists",
+                loader: fetchPlaylist,
+                element: <Playlists />,
             },
             {
-                path: "/stores/:storeId",
-                loader: getStore,
+                path: "/playlists/:playlistId",
+                loader: getPlaylist,
                 element: (
-                    <SingleStore />
+                    <SinglePlaylist />
                 ),
             },
             {
-                path: "/stores/new",
+                path: "/playlists/new",
                 element: (
                     <CreateProduct />
                 ),
             },
             {
-                path: "/stores/:storeId/items/:itemId",
-                loader: getItem,
+                path: "/playlists/:playlistsId/songs/:songId",
+                loader: getSong,
                 element: (
-                    <SingleItem />
+                    <SingleSong />
                 ),
             },
             {
-                path: "/stores/:storeId/items/new",
+                path: "/playlists/:playlistId/songs/new",
                 loader: null,
                 element: (
-                    <CreateItem />
+                    <CreateSong />
                 ),
             },
             {
-                path: "/stores/:storeId/items",
-                loader: getItems,
+                path: "/playlists/:playlistId/songs",
+                loader: getSongs,
                 element: (
-                    <Items />
+                    <Songs />
                 ),
             }
       

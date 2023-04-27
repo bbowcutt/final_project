@@ -4,10 +4,10 @@ export default function Wrapper() {
   return (
     <>
       <header>
-        <Link to="/stores">View all stores</Link>
+        <Link to="/playlists">View all playlists</Link>
       </header>
       <header>
-        <Link to="/stores/new">Add new store</Link>
+        <Link to="/playlists/new">Add new playlist</Link>
       </header>
     
 
