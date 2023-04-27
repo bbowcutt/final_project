@@ -3,15 +3,15 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
 const port = 3001
-const { Store, Item } = require('./models.js');
-const storeRouter = require('./routes/stores.js'); 
+const { Playlist, Song } = require('./models.js');
+const playlistRouter = require('./routes/playlists.js'); 
 
 
 app.use(cors());
 app.use(express.json());
 
 
-const dbUrl = 'mongodb://127.0.0.1:27017/stores';
+const dbUrl = 'mongodb://127.0.0.1:27017/playlists';
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
@@ -22,13 +22,13 @@ db.once('open', function() {
 
 
 app.get('/', async(req, res) => {
-    const stores = await Store.find();
-    res.send( stores )
+    const playlists = await Playlist.find();
+    res.send( playlists )
 }); 
 
 
 
-app.use('/stores', storeRouter); 
+app.use('/playlists', playlistRouter); 
 
 
 app.listen(port, () => {

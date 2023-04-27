@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const StoresPost = mongoose.model('storesPost', {
+const PlaylistsPost = mongoose.model('playlistPost', {
     _id: mongoose.SchemaTypes.String,
     name: mongoose.SchemaTypes.String
 });
 
-const ItemsPost = mongoose.model('itemsPost', {
+const SongsPost = mongoose.model('songsPost', {
     _id: mongoose.SchemaTypes.String,
     name: mongoose.SchemaTypes.String,
     quantity: mongoose.SchemaTypes.Number,
@@ -14,6 +14,6 @@ const ItemsPost = mongoose.model('itemsPost', {
 });
 
 module.exports = {
-    Store: StoresPost,
-    Item: ItemsPost
+    Playlist: PlaylistsPost,
+    Song: SongsPost
 }
