@@ -50,7 +50,7 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/playlist/:playlistId/songs",
+                path: "/playlists/:playlistId/songs",
                 loader: getSongs,
                 element: (
                     <Songs />
