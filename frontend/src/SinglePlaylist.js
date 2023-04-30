@@ -1,4 +1,5 @@
 import {Link, useLoaderData} from 'react-router-dom';
+import './SinglePlaylist.css';
 
 export async function getPlaylist({ params }) {
   const response = await fetch(`http://localhost:3001/playlists/${params.playlistId}`)
