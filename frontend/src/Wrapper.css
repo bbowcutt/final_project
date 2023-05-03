@@ -1,3 +1,6 @@
+body{
+  background-color: lightblue;
+}
 h2{
     font-family:'Times New Roman', Times, serif;  
     color:rgb(155, 36, 207); 
@@ -7,4 +10,4 @@ h2{
     font-family:'Times New Roman', Times, serif;  
     color:rgb(155, 36, 207); 
   }
-  
+ 
